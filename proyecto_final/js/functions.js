@@ -53,6 +53,14 @@ $('#create-test').on('click', function(){
             showConfirmButton: false,
             timer: 1500
         })
+
+        let promise = new Promise(function(resolve, reject) {
+            // la función se ejecuta automáticamente cuando se construye la promesa
+          
+            // después de 1 segundo, indica que la tarea está hecha con el resultado "hecho"
+            setTimeout(() => resolve("hecho"), 1000);
+            console.log('Promesa ejecutada')
+        });
     }
 })
 
@@ -109,7 +117,7 @@ function addRow(obj){
     }  
 
 
-    
+
     let row = `<tr scope="row" class="test-row-${obj.id}">
                     <td>${obj.name}</td>
                     <td id="description-${obj.id}" data-testid="${obj.id}"">${obj.description}</td>
