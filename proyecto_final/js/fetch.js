@@ -1,8 +1,3 @@
- 
-const tabla = document.querySelector('#tests-table tbody');
-let json = {"name":"Gasto 1", "id":"1", "description":"Ejemplo 1", "cost":0}    
-
-
 let file = "\js/data.json"
 fetch (file)
     .then( response => response.json() )
