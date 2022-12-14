@@ -1,128 +1,154 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css" integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
-    <script src="https://kit.fontawesome.com/49ce9d820e.js" crossorigin="anonymous"></script>
-    <link href="./css/a.css" rel="stylesheet" type="text/css">
-        <!-- jQuery -->
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-        <!-- SweetAlert2 -->
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/limonte-sweetalert2/7.2.0/sweetalert2.min.css">
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/limonte-sweetalert2/7.2.0/sweetalert2.all.min.js"></script>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+	<script src="https://code.jquery.com/jquery-3.4.1.js"></script>
+
+	<link href="./css/style.css" rel="stylesheet" type="text/css">
+	<link href="./css/buttons.css" rel="stylesheet" type="text/css">
+
+	<link href="./css/style_1.css" rel="stylesheet" type="text/css">
+
+	<script src="https://cdn.jsdelivr.net/npm/sweetalert2@10.10.1/dist/sweetalert2.all.min.js"></script>
+	<link rel='stylesheet' href='https://cdn.jsdelivr.net/npm/sweetalert2@10.10.1/dist/sweetalert2.min.css'>
+
+
+	<script src="https://kit.fontawesome.com/49ce9d820e.js" crossorigin="anonymous"></script>
+	
+
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css" integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
+	<style>
+		
+		.hidden{
+			display:none;
+		}
+
+		.result{
+			max-width:80px; 
+		}
+
+	</style>
+
+	
 
 </head>
 <body>
+	
 
 
+	<header class="header">
+		<nav class="navbar navbar-expand-lg  navbar-dark" >
+			<a href="index.html" class="navbar-brand"><i class="fa-solid fa-house fa-sm color-white"></i></a>
+			<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+				<span class="navbar-toggler-icon"></span>
+			</button>
+			<div class="collapse navbar-collapse" id="navbarNav">
+				<ul class="navbar-nav  bg-custom">
+					<li class="nav-item">
+						<a class="nav-link" href="/index.html"><span class="color-white">Ingresa tu rendición</span></a>
+					</li>
 
-    <header class="header">
-        <nav class="navbar navbar-expand-lg  navbar-dark" >
+			</div>
+		</nav>
 
+	</header>
+	<section>
+		<div class="container">
 
-            <a href="index.html" class="navbar-brand"><i class="fa-solid fa-house fa-sm color-white"></i></a>
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav  bg-custom">
-                    <li class="nav-item">
-                        <a class="nav-link" href="/index.html"><span class="color-white">Ingresa tu rendición</span></a>
-                    </li>
-
-            </div>
-        </nav>
-    </header>
-
-    <main>
-        <section>
-            <div class="container">
-                <form class="needs-validation" novalidate  action="" method="POST">
-                    <h3>Ingreso de rendiciones</h3>
-                    <div class="form-group">
-                        <label for="">Nombre de gasto:</label>
-                        <input type="text" class="form-control"  id="name" required>
-
-                        
-                    </div>
-                    <div class="form-group">
-                        <label for="">Descripcion</label>
-                        <input type="text" class="form-control"  id="description" required>
-                    </div>
-                    <div class="form-group"> 
-                        <label for="">Monto</label>
-                        <input type="number"  class="form-control"  id="monto" required>
-                    </div>
+			<div class="container">
+				<div class="row">
+					<div class="col-9">
+						<button class="btn btn-sm  mb-4" id="add-test" data-toggle="collapse" data-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">Agrega un gasto nuevo</button>
+					</div>
+					<div class="col-3">
+						<input id="searchTerm" type="text" onkeyup="doSearch()" class="form-control" placeholder="Buscador" />
+					</div>
+					
+				</div>
+			</div>
 
 
-                    <div class="container form-group">
-                        <div class="row">
-                            <div class="col text-center">
-                                <button type="submit" class="btn btn-primary btn-sm" name="btnSubmit" id="btnSubmit">Enviar</button>
-                            </div>
-                        </div>
-                    </div>
-                </form>
-            </div>
-        </section>
+			
+			
+			<div class="collapse" id="collapseExample">
+				<div class="card card-body">
+					<div class="container">
+						<div class="row">
+							<div class="col-sm">
+								<label for="name">Nombre de gasto</label>
+								<input type="text" class="form-control mb-2" id="name">
+							</div>
+							<div class="col-sm">
+								<label for="description">Descripción</label>
+								<input type="text" class="form-control mb-2" id="description">
+							</div>
+							<div class="col-sm">
+								<label for="cost">Monto</label>
+								<div class="input-group mb-2">
+								<div class="input-group-prepend">
+									<div class="input-group-text">$</div>
+								</div>
+									<input type="number" class="form-control" id="cost" >
+								</div>
+							</div>
+							<div class="col-sm">
+								<label for="agregar" class="mb-5"></label>
+								<button class="btn btn-sm btn-info btn-sm  mt-3" id="create-test">Agregar</button>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
 
 
-        <section>
-            <div class="container">
-                <form class="mt-5">
-                    <p>Buscador</p>
-                    <input id="searchTerm" type="text" onkeyup="doSearch()" class="form-control" />
-            
-                </form>
-                <table class="table table-hover mt-3" id="tabla">
-                    <thead>
-                        <tr>
-                            <th>Nombre de gasto</th>
-                            <th>Descripción</th>
-                            <th>Monto</th>
-                        </tr>
-                    </thead>
-                    <tbody>
+			
+			<div class="table-responsive-sm">
+				<table class="table results" id="tabla">
+					<thead>
+						<tr>
+							<th scope="col">Nombre de gasto</th>
+							<th scope="col">Descripción</th>
+							<th scope="col">Monto</th>
+							<th scope="col"></th>
 
-                        <tr class='noSearch hide'>
+						</tr>
+					</thead>
+					<tbody id="tests-table">
+						
+					</tbody>
+				</table>
+			</div>
+		</div>
+	</section>
 
-                            <td colspan="3"></td>
-            
-                        </tr>
 
-                    </tbody>
-                </table>
-            </div>
-        </section>
+	<footer class="col-12">
+		<div class="container">
+			<hr>
+			<div class="row padding1">
+				<div>
+					<a href="index.html" class="navbar-brand"><i class="fa-solid fa-house fa-sm"></i></a>
+					© 2022 Constanza Morales
+				</div>
+				<div class="ml-auto text-aling">
+					<i class="fa-brands fa-facebook fa-lg"></i>
+					<i class="fa-brands fa-instagram fa-lg"></i>
+				</div>
+			</div>
+		</div>
+	</footer>
+	<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
 
-        <footer class="col-12">
-            <div class="container">
-                <hr>
-                <div class="row padding1">
-                    <div>
-                        <a href="index.html" class="navbar-brand"><i class="fa-solid fa-house fa-sm"></i></a>
-                        © 2022 Constanza Morales
-                    </div>
-                    <div class="ml-auto text-aling">
-                        <i class="fa-brands fa-facebook fa-lg"></i>
-                        <i class="fa-brands fa-instagram fa-lg"></i>
-                    </div>
-                </div>
-            </div>
-        </footer>
-    </main>
+	<script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-Fy6S3B9q64WdZWQUiU+q4/2Lc9npb8tCaSX9FK7E8HnRr0Jz8D6OP9dO5Vg3Q9ct" crossorigin="anonymous"></script>
 
-    
-    <script src="./js/interfaz.js"></script>
-    <script src="./js/logica.js"></script>
-    <script src="./js/buscador.js"></script>
-    <script src="./js/validation.js"></script>
-    
-    
-    <script src="./js/buttonalert.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-Fy6S3B9q64WdZWQUiU+q4/2Lc9npb8tCaSX9FK7E8HnRr0Jz8D6OP9dO5Vg3Q9ct" crossorigin="anonymous"></script>
-
+	<script src="./js/fetch.js"></script> 
+	<script src="./js/functions.js"></script> 
+	<script src="./js/buscador.js"></script> 
 </body>
 </html>
