@@ -14,18 +14,18 @@ $('#add-test').on('click', function(){
 
 $('#description').on('keyup', function(){
     newTest.description = $(this).val()
-    console.log(newTest)
+    // console.log(newTest)
 
 })
 $('#cost').on('keyup', function(){
     newTest.cost = $(this).val()
-    console.log(newTest)
+    // console.log(newTest)
 
 })
 
 $('#name').on('keyup', function(){
     newTest.name = $(this).val()
-    console.log(newTest)
+    // console.log(newTest)
 })
 
 $('#create-test').on('click', function(){
@@ -37,7 +37,10 @@ $('#create-test').on('click', function(){
 
         })
     }else{
+
+
         addRow(newTest)
+
         $('#name').val('')
         $('#description').val('')
         $('#cost').val('')
@@ -52,6 +55,8 @@ $('#create-test').on('click', function(){
         })
     }
 })
+
+
 
 
 let tests = [
@@ -73,6 +78,38 @@ function addRow(obj){
     ESTA LÍNEA SE LE AGREGA EL BOTON DE ELIMINAR Y SE LLAMA ESTA FUNCIÓN
 
     */
+    if (obj.id!=1){
+        // guarda los datos en formato json
+        guardarDatos();
+        
+        function guardarDatos() {
+            let saveName = document.querySelector('#name').value,
+                saveDescr = document.querySelector('#description').value,
+                saveMoney = document.querySelector('#cost').value;
+            
+            agregarDatos(saveName, saveDescr, saveMoney);
+            
+        }
+        
+
+        function agregarDatos(saveName, saveDescr, saveMoney) {
+            let datos = [];
+            let New = {
+                name: saveName.toLocaleLowerCase(),
+                description: saveDescr.toLocaleLowerCase(),
+                money: saveMoney.toLocaleLowerCase()
+            };
+
+            console.log(New); 
+            datos.push(New);  
+            console.log(datos)
+            
+        }
+        
+    }  
+
+
+    
     let row = `<tr scope="row" class="test-row-${obj.id}">
                     <td>${obj.name}</td>
                     <td id="description-${obj.id}" data-testid="${obj.id}"">${obj.description}</td>

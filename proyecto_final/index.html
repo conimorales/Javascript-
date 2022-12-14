@@ -62,8 +62,12 @@
 
 			<div class="container">
 				<div class="row">
-					<div class="col-9">
+					<div class="col-6">
 						<button class="btn btn-sm  mb-4" id="add-test" data-toggle="collapse" data-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">Agrega un gasto nuevo</button>
+					</div>
+
+					<div class="col-3">
+						<button class="btn btn-sm btn-info btn-sm  mt-3" id="json">Json</button>
 					</div>
 					<div class="col-3">
 						<input id="searchTerm" type="text" onkeyup="doSearch()" class="form-control" placeholder="Buscador" />
@@ -111,9 +115,9 @@
 				<table class="table results" id="tabla">
 					<thead>
 						<tr>
-							<th scope="col">Nombre de gasto</th>
-							<th scope="col">Descripción</th>
-							<th scope="col">Monto</th>
+							<th scope="col"><h4>Nombre de gasto</h4></th>
+							<th scope="col"><h4>Descripción</h4></th>
+							<th scope="col"><h4>Monto</h4></th>
 							<th scope="col"></th>
 
 						</tr>
@@ -150,5 +154,7 @@
 	<script src="./js/fetch.js"></script> 
 	<script src="./js/functions.js"></script> 
 	<script src="./js/buscador.js"></script> 
+
+
 </body>
 </html>
